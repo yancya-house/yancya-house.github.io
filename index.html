@@ -4,11 +4,21 @@
     <meta charset="utf-8">
     <title>やんちゃハウス</title>
     <meta name="description" content="やんちゃハウス公式サイト">
-    <meta name="memo" content="github.io バージョン">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <h1>ようこそ！やんちゃハウスへ</h1>
     <marquee scrollamount="8">工事中</marquee>
+    <p>あなたは <span id="counter"></span> 人目のお客様です</p>
+    <script>
+      const accessCounterUrl = 'https://us-central1-yancya-house.cloudfunctions.net/accessCounter';
+      fetch(accessCounterUrl, { mode: 'cors' }).then(res => {
+        res.json().then(res => {
+          document.querySelector('#counter').innerHTML = res.count;
+        });
+      }).catch(err => {
+        console.error(JSON.stringify(err));
+      });
+    </script>
   </body>
 </html>
