@@ -12,7 +12,7 @@
     <p>あなたは <span id="counter">0000000000</span> 人目のお客様です</p>
     <script>
       const accessCounterUrl = 'https://us-central1-yancya-house.cloudfunctions.net/accessCounter';
-      fetch(accessCounterUrl, { mode: 'cors' }).then(res => {
+      fetch(accessCounterUrl, { mode: 'cors', credentials: 'include' }).then(res => {
         res.json().then(res => {
           document.querySelector('#counter').innerHTML = `${res.count}`.padStart(10, '0');
         });

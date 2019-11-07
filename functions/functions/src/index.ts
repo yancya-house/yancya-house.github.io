@@ -19,7 +19,7 @@ export const accessCounter = functions.https.onRequest(async (request, response)
   const ip = request.ip;
   const ua = request.headers['user-agent'];
   const visitorAtToday = request.headers.cookie ?
-    cookie.parse(request.headers.cookie).visitorAtToday : false;
+    cookie.parse(request.headers.cookie).__session : false;
   const doc = db.collection(COLLECTION_ID).doc(DOCUMENT_ID);
   const docRef = await doc.get();
   const counter = docRef.data() as Counter;
@@ -44,6 +44,6 @@ export const accessCounter = functions.https.onRequest(async (request, response)
   }
   const aDayLater = new Date(Date.now() + 24 * 3600000);
   response.setHeader('Cache-Control', 'private');
-  response.cookie('visitorAtToday', true, { expires: aDayLater });
+  response.cookie('__session', true, { expires: aDayLater });
   response.send(JSON.stringify({count: counter.count}));
 });
