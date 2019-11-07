@@ -15,7 +15,7 @@ admin.initializeApp(functions.config().firebase);
 const db = admin.firestore()
 
 export const accessCounter = functions.https.onRequest(async (request, response) => {
-  response.set('Access-Control-Allow-Origin', "*");
+  response.set('Access-Control-Allow-Origin', "https://yancya.house");
   const ip = request.ip;
   const ua = request.headers['user-agent'];
   const visitorAtToday = request.headers.cookie ?
