@@ -2,14 +2,24 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>やんちゃハウス</title>
+    <title>Top - やんちゃハウス</title>
     <meta name="description" content="やんちゃハウス公式サイト">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <h1>ようこそ！やんちゃハウスへ</h1>
-    <marquee scrollamount="8">工事中</marquee>
+    <h1><a href="/">やんちゃハウス</a></h1> 
+    <p>ようこそ！やんちゃハウスへ！</p>
     <p>あなたは <span id="counter">0000000000</span> 人目のお客様です</p>
+    <h2>開催一覧</h2>
+    <p><a href="2020">やんちゃハウス 2020</a> ← Next ハウス</p>
+    <p><a href="2019">やんちゃハウス 2019</a></p>
+    <p><a href="2018">やんちゃハウス 2018</a></p>
+    <p><a href="2017">やんちゃハウス 2017</a></p>
+    <h2>やんちゃハウスとは</h2>
+    <p>せっかく RubyKaigi で、みんなが同じ都市に滞在するんだし、合宿気分で１つの家に棲んじゃお。というコンセプトで運営している期間限定、超短期間のシェアハウスです。</p>
+    <p>他の Rubyist と一緒に棲む経験、こういう機会でもないと、中々できませんね。</p>
+    <h2>責任者</h2>
+    <p><a href="https://twitter.com/yancya">yancya</a></p>
     <script>
       const accessCounterUrl = 'https://us-central1-yancya-house.cloudfunctions.net/accessCounter';
       fetch(accessCounterUrl, { mode: 'cors', credentials: 'include' }).then(res => {
