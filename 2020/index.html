@@ -24,7 +24,7 @@
     <p>ゲスト都合でのキャンセルについては返金ができませんので、利用する権利をどなたかにお譲りいただくなど、適宜ご対応をお願いします。</p>
     <script>
       const people =
-        Math.trunc(window.crypto.getRandomValues(new Uint8Array(1))[0] / 10);
+        Math.trunc(window.crypto.getRandomValues(new Uint8Array(1))[0] / 10) + 1;
       document.querySelector('#fake-viewers').innerHTML =
         `※ 現在 ${people} 名のお客様が、この宿を閲覧されています`;
     </script>
