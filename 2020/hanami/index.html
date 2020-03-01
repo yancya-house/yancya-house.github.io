@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>花見 2020 - やんちゃハウス</title>
+    <meta name="description" content="やんちゃハウス公式サイト">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/all.css">
+  </head>
+  <body>
+    <h1><a href="/">やんちゃハウス</a></h1> 
+    <h2>やんちゃハウス 花見 2020</h2>
+    <p>やんちゃハウス 花見 2020 は <a href="https://rubykaigi.org/2020">RubyKaigi 2020</a> の舞台である松本市を予習をする宿泊ミートアップです</p>
+    <p><a href="https://naruby.connpass.com/event/169495/">ながのRubyの会のお花見</a>にも参加できる日程となっています</p>
+    <p>現在、参加者募集中です。</p>
+    <small id="fake-viewers">ホテル予約サイトによくある、絶対ウソだろってやつ</small>
+    <h2>募集要項</h2>
+    <p><b>募集人数:</b> 13 名</p>
+    <p><b>場所:</b> 松本城のすぐ近くのゲストハウス</p>
+    <p><b>チェックイン:</b> 2020/04/08 午後</p>
+    <p><b>チェックアウト:</b> 2020/04/12 午前</p>
+    <p><b>利用料金:</b> 13,000 円 円（４泊分）</p>
+    <p><b>応募:</b> <a href="https://twitter.com/yancya">yancya</a> までご連絡ください</p>
+    <h2>注意事項</h2>
+    <p>ゲスト都合でのキャンセルについては返金ができませんので、利用する権利をどなたかにお譲りいただくなど、適宜ご対応をお願いします。</p>
+    <script>
+      const people =
+        Math.trunc(window.crypto.getRandomValues(new Uint8Array(1))[0] / 10) + 1;
+      document.querySelector('#fake-viewers').innerHTML =
+        `※ 現在 ${people} 名のお客様が、この宿を閲覧されています`;
+    </script>
+  </body>
+</html>
