@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>2022 - やんちゃWorldハウス</title>
+    <meta name="description" content="やんちゃハウス公式サイト">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/all.css">
+  </head>
+  <body>
+    <h1><a href="/">やんちゃハウス</a></h1> 
+    <h2>やんちゃWorldハウス 2022</h2>
+    <p>やんちゃWorldハウス 2022 は <a href="https://2022.rubyworld-conf.org/ja/">RubyWorld Conference 2022</a>に合わせて実施するかもしれないやんちゃハウスの亜種です。</p>
+    <p>詳細は未定です。</p>
+    <script>
+      const people =
+        Math.trunc(window.crypto.getRandomValues(new Uint8Array(1))[0] / 10) + 1;
+      document.querySelector('#fake-viewers').innerHTML =
+        `※ 現在 ${people} 名のお客様が、この宿を閲覧されています`;
+    </script>
+  </body>
+</html>
