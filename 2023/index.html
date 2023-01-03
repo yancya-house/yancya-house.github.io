@@ -5,6 +5,8 @@
     <title>2023 - やんちゃハウス</title>
     <meta name="description" content="やんちゃハウス公式サイト">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/all.css">
   </head>
   <body>
@@ -24,14 +26,23 @@
     <p>ゲスト都合でのキャンセルについては返金ができませんので、利用する権利をどなたかにお譲りいただくなど、適宜ご対応をお願いします。</p>
     <p>利用にあたっては<a href="https://rubykaigi.org/2023/covid-19/">RubyKaigi 2023 の COVID-19 に関するポリシー</a>を遵守していただく必要があります。</p>
     <script>
-      function updateFakeViewer(){
-        const people =
-          Math.trunc(window.crypto.getRandomValues(new Uint8Array(1))[0] / 10) + 1;
-        document.querySelector('#fake-viewers').innerHTML =
-          `※ 現在 ${people} 名のお客様が、この宿を閲覧されています`;
+      function rand() {
+        return window.crypto.getRandomValues(new Uint8Array(1))[0];
       }
-      updateFakeViewer();
-      setInterval(updateFakeViewer, 10 * 1000);
+      function fakeMessage(){
+        const num = Math.trunc(rand() / 10) + 1;
+        return `※ 現在${num}名のお客様が、この宿を閲覧されています`;
+      }
+      function FakeViewers(){
+        const [message, setMessage] = React.useState(fakeMessage());
+        const updateMesaage = ()=> setMessage(fakeMessage())
+        const randomSeconds = rand() / 20 * 1000;
+        setTimeout(updateMesaage, randomSeconds);
+        return React.createElement('span', {}, message);
+      }
+      const container = document.querySelector('#fake-viewers');
+      const root = ReactDOM.createRoot(container);
+      root.render(React.createElement(FakeViewers));
     </script>
   </body>
 </html>
