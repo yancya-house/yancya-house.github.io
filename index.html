@@ -15,13 +15,14 @@
     <h2>開催一覧</h2>
     <p><a href="2024">やんちゃハウス 2024</a></p>
     <p><a href="2023">やんちゃハウス 2023</a></p>
-    <p><a href="2022/world">やんちゃWorldハウス 2022</a></p>
-    <p><a href="2022">やんちゃハウス 2022</a></p>
-    <p><a href="2020">やんちゃハウス 2020</a></p>
-    <p><a href="2020/hanami">やんちゃハウス 花見 2020</a></p>
-    <p><a href="2019">やんちゃハウス 2019</a></p>
-    <p><a href="2018">やんちゃハウス 2018</a></p>
-    <p><a href="2017">やんちゃハウス 2017</a></p>
+    <p class="past" hidden><a href="2022/world">やんちゃWorldハウス 2022</a></p>
+    <p class="past" hidden><a href="2022">やんちゃハウス 2022</a></p>
+    <p class="past" hidden><a href="2020">やんちゃハウス 2020</a></p>
+    <p class="past" hidden><a href="2020/hanami">やんちゃハウス 花見 2020</a></p>
+    <p class="past" hidden><a href="2019">やんちゃハウス 2019</a></p>
+    <p class="past" hidden><a href="2018">やんちゃハウス 2018</a></p>
+    <p class="past" hidden><a href="2017">やんちゃハウス 2017</a></p>
+    <p><a onClick="openPastHouses(this)">過去のハウス</a></p>
     <h2>やんちゃハウスとは</h2>
     <p>せっかく RubyKaigi で、みんなが同じ都市に滞在するんだし、合宿気分で１つの家に棲んじゃお。というコンセプトで運営している期間限定、超短期間のシェアハウスです。</p>
     <p>他の Rubyist と一緒に棲む経験、こういう機会でもないと、中々できませんね。</p>
@@ -39,6 +40,10 @@
       }).catch(err => {
         console.error(JSON.stringify(err));
       });
+      function openPastHouses(that) {
+        Array.from(document.querySelectorAll('p.past')).forEach(p => p.hidden = false);
+        that.hidden = true;
+      }
     </script>
   </body>
 </html>
