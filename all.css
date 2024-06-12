@@ -31,3 +31,7 @@ p, small {
 p:last-child {
   margin-bottom: 0;
 }
+
+p.warning {
+  color: #f00;
+}
