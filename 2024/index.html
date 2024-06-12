@@ -10,48 +10,7 @@
   </head>
   <body>
     <h1><a href="/">やんちゃハウス</a></h1> 
-
     <h2>やんちゃハウス 2024</h2>
-    <p>やんちゃハウス 2024は沖縄県那覇市にて行われる <a href="https://rubykaigi.org/2024/">RubyKaigi 2024</a> の宿です。</p>
-    <p>今回の宿は５ＬＤＫのメゾネットマンションを１０人で使うので、割と贅沢です。沖縄なのでね。</p>
-    <p>ご好評につき、枠は完売いたしました。ありがとうございました。</p>
-    <small id="fake-viewers">ホテル予約サイトによくある、絶対ウソだろってやつ</small>
-
-    <h2>募集要項</h2>
-    <p><b>募集人数: </b>９名（残り０名）</p>
-    <p><b>場所: </b>RubyKaigi 2024の会場『那覇文化芸術劇場なはーと』から徒歩１０分</p>
-    <p><b>チェックイン（仮）: </b>2024年5月14日（火）16:00</p>
-    <p><b>チェックアウト（仮）: </b> 2024年5月18日（土）10:00</p>
-    <p><b>利用料金: </b>32,000円（４泊分）</p>
-    <p><b>応募: </b><a href="https://twitter.com/yancya">yancya</a> まで DM でご連絡ください</p>
-
-    <h2>注意事項</h2>
-    <p>ゲスト都合でのキャンセルについては返金ができませんので、利用する権利をどなたかにお譲りいただくなど、適宜ご対応をお願いします。</p>
-
-    <script type="text/ruby" charset="UTF-8">
-      require "js"
-      Window = JS.global[:window]
-      Document = JS.global[:document]
-
-      class FakeViewers
-        def initialize
-          @fake_viewers = Document.querySelector('#fake-viewers')
-          update_fake
-        end
-
-        def set_next
-          Window.setTimeout(-> {
-            update_fake
-            set_next
-          }, rand(10000))
-        end
-
-        private def update_fake
-          @fake_viewers[:innerText] = "※ 現在#{rand(1..20)}名のお客様が、この宿を閲覧されています"
-        end
-      end
-
-      FakeViewers.new.set_next
-    </script>
+    <p>やんちゃハウス 2024 は沖縄県那覇市にて行われた <a href="https://rubykaigi.org/2024/">RubyKaigi 2024</a> に併せて実施され、10名のメンバーで楽しく暮らしましたとさ。めでたしめでたし</p>
   </body>
 </html>
