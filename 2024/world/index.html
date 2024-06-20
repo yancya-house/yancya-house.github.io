@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>2024 - やんちゃWorldハウス</title>
+    <meta name="description" content="やんちゃハウス公式サイト">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/ruby-head-wasm-wasi@latest/dist/browser.script.iife.js"></script>
+    <link rel="stylesheet" type="text/css" href="/all.css">
+  </head>
+  <body>
+    <h1><a href="/">やんちゃハウス</a></h1> 
+    <h2>やんちゃWorldハウス 2024</h2>
+    <p>やんちゃWorldハウス 2024は島根県松江市にて行われる <a href="https://2024.rubyworld-conf.org/ja/">RubyWorld Conference 2024</a> の宿です。</p>
+    <p>やんちゃWorldハウス 2022の時に使った、ハイグレードなゲストハウスです。めちゃ良かったのでリピします。</p>
+    <small id="fake-viewers">ホテル予約サイトによくある、絶対ウソだろってやつ</small>
+
+    <h2>募集要項</h2>
+    <p>応募人数が募集人数に達したため、募集を終了します。ありがとうございました。</p>
+    <p><b>募集人数: </b>３名（残り３名）</p>
+    <p><b>場所: </b>松江駅周辺</p>
+    <p><b>チェックイン（仮）: </b>2024年12月5日（木）15:00</p>
+    <p><b>チェックアウト（仮）: </b> 2024年12月7日（土）10:00</p>
+    <p><b>利用料金: </b>19,000円（２泊分）</p>
+    <p><b>応募: </b><a href="https://twitter.com/yancya">yancya</a> まで DM でご連絡ください</p>
+
+    <h2>注意事項</h2>
+    <p>ゲスト都合でのキャンセルについては返金ができませんので、利用する権利をどなたかにお譲りいただくなど、適宜ご対応をお願いします。</p>
+    <script type="text/ruby" charset="UTF-8">
+      require "js"
+      Window = JS.global[:window]
+      Document = JS.global[:document]
+
+      class FakeViewers
+        def initialize
+          @fake_viewers = Document.querySelector('#fake-viewers')
+          update_fake = -> {
+            @fake_viewers[:innerText] = "※ 現在#{rand(1..20)}名のお客様が、この宿を閲覧されています"
+          }
+          update_fake[]
+          Window.setInterval(update_fake, rand(3..10) * 1000)
+        end
+      end
+
+      FakeViewers.new
+    </script>
+  </body>
+</html>
