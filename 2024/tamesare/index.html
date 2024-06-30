@@ -11,38 +11,6 @@
   <body>
     <h1><a href="/">やんちゃハウス</a></h1> 
     <h2>やんちゃ試されハウス 2024</h2>
-    <p>やんちゃ試されハウス 2024は北海道札幌市にて行われる <a href="https://enishi-tech-15th-anniv-conf.peatix.com/">えにしテック15周年記念カンファレンス</a> の宿です。</p>
-    <p>札幌の宿が異常に高いので、やんちゃハウスがやれるととても助かる……</p>
-    <small id="fake-viewers">ホテル予約サイトによくある、絶対ウソだろってやつ</small>
-
-    <h2>募集要項</h2>
-    <p>応募人数が募集人数に達したため、募集を終了します。ありがとうございました。</p>
-    <p><b>募集人数: </b>５名（残り０名）</p>
-    <p><b>場所: </b>西線６条駅のあたり</p>
-    <p><b>チェックイン（仮）: </b>2024年6月28日（金）15:00</p>
-    <p><b>チェックアウト（仮）: </b> 2024年6月30日（日）10:00</p>
-    <p><b>利用料金: </b>12,000円（２泊分）</p>
-    <p><b>応募: </b><a href="https://twitter.com/yancya">yancya</a> まで DM でご連絡ください</p>
-
-    <h2>注意事項</h2>
-    <p>ゲスト都合でのキャンセルについては返金ができませんので、利用する権利をどなたかにお譲りいただくなど、適宜ご対応をお願いします。</p>
-    <script type="text/ruby" charset="UTF-8">
-      require "js"
-      Window = JS.global[:window]
-      Document = JS.global[:document]
-
-      class FakeViewers
-        def initialize
-          @fake_viewers = Document.querySelector('#fake-viewers')
-          update_fake = -> {
-            @fake_viewers[:innerText] = "※ 現在#{rand(1..20)}名のお客様が、この宿を閲覧されています"
-          }
-          update_fake[]
-          Window.setInterval(update_fake, rand(3..10) * 1000)
-        end
-      end
-
-      FakeViewers.new
-    </script>
+    <p>やんちゃ試されハウス 2024は北海道札幌市にて行われた <a href="https://enishi-tech-15th-anniv-conf.peatix.com/">えにしテック15周年記念カンファレンス</a> に併せて実施され、6名のメンバーで楽しく暮らしましたとさ。めでたしめでたし</p>
   </body>
 </html>
