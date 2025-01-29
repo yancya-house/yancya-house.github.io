@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>やんちゃハウス 2025 - やんちゃハウス</title>
+    <meta name="description" content="やんちゃハウス公式サイト">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/ruby-head-wasm-wasi@latest/dist/browser.script.iife.js"></script>
+    <link rel="stylesheet" type="text/css" href="/all.css">
+  </head>
+  <body>
+    <h1><a href="/">やんちゃハウス</a></h1>
+    <h2>やんちゃハウス 2025</h2>
+    <p>やんちゃハウス 2025 は 2025年4月16日〜18日にかけて愛媛県県民文化会館にて行われる <a href="https://rubykaigi.org/2025/">RubyKaigi 2025</a> の宿です。</p>
+    <small id="fake-viewers">ホテル予約サイトによくある、絶対ウソだろってやつ</small>
+
+    <h2>募集要項</h2>
+    <p><b>募集人数: </b>14名（残り14名）</p>
+    <p><b>場所: </b>道後温泉から徒歩2分。会場から徒歩10分程度</p>
+    <p><b>チェックイン: </b>2025年4月15日（火）16:00</p>
+    <p><b>チェックアウト: </b> 2025年4月19日（土）10:00</p>
+    <p><b>利用料金: </b>20,000円（４泊分）</p>
+    <p><b>応募・問い合わせ: </b><a href="https://twitter.com/yancya">yancya</a> まで DM でご連絡ください</p>
+
+    <h2>注意事項</h2>
+    <p>ゲスト都合でのキャンセルについては返金ができませんので、利用する権利をどなたかにお譲りいただくなど、適宜ご対応をお願いします。</p>
+    <script type="text/ruby" charset="UTF-8">
+      require "js"
+      Window = JS.global[:window]
+      Document = JS.global[:document]
+
+      class FakeViewers
+        def initialize
+          @fake_viewers = Document.querySelector('#fake-viewers')
+          update_fake = -> {
+            @fake_viewers[:innerText] = "※ 現在#{rand(1..20)}名のお客様が、この宿を閲覧されています"
+          }
+          update_fake[]
+          Window.setInterval(update_fake, rand(3..10) * 1000)
+        end
+      end
+
+      FakeViewers.new
+    </script>
+  </body>
+</html>
