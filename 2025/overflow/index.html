@@ -11,36 +11,6 @@
   <body>
     <h1><a href="/">やんちゃハウス</a></h1>
     <h2>やんちゃハウス Overflow 2025</h2>
-    <p>やんちゃハウス Overflow 2025 は 2025年7月19日（土）に<a href="https://www.r3it.com/ashibinaa">gusuku Ashibinaa OSAKA</a>にて行われる <a href="https://naniwarb.doorkeeper.jp/events/185053">PicoRuby Overflow会議</a> の宿です。</p>
-    <p>個人的なツテで宿を確保したら、他にも何人か泊まれそうなので募集してます</p>
-    <small id="fake-viewers">ホテル予約サイトによくある、絶対ウソだろってやつ</small>
-
-    <h2>募集要項</h2>
-    <p><b>募集人数: </b>3名（残り0名）</p>
-    <p><b>場所: </b>たぶん道頓堀方面</p>
-    <p><b>チェックイン: </b>2025年7月19日（土）16:00 くらい</p>
-    <p><b>チェックアウト: </b> 2025年7月20日（日）10:00 くらい</p>
-    <p><b>応募・問い合わせ: </b><a href="http://discord.yancya.house/">やんちゃハウス Discord</a> でやり取りをしています</p>
-
-    <h2>注意事項</h2>
-    <p>ゲスト都合でのキャンセルについては返金ができませんので、利用する権利をどなたかにお譲りいただくなど、適宜ご対応をお願いします。</p>
-    <script type="text/ruby" charset="UTF-8">
-      require "js"
-      Window = JS.global[:window]
-      Document = JS.global[:document]
-
-      class FakeViewers
-        def initialize
-          @fake_viewers = Document.querySelector('#fake-viewers')
-          update_fake = -> {
-            @fake_viewers[:innerText] = "※ 現在#{rand(1..20)}名のお客様が、この宿を閲覧されています"
-          }
-          update_fake[]
-          Window.setInterval(update_fake, rand(3..10) * 1000)
-        end
-      end
-
-      FakeViewers.new
-    </script>
+    <p>やんちゃハウス Overflow 2025 は 2025年7月19日（土）に<a href="https://www.r3it.com/ashibinaa">gusuku Ashibinaa OSAKA</a>にて行われた <a href="https://naniwarb.doorkeeper.jp/events/185053">PicoRuby Overflow会議</a> に併せて実施され、3名のメンバーで楽しく暮らしましたとさ。めでたしめでたし</p>
   </body>
 </html>
