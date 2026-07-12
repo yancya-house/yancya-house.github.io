@@ -1,0 +1,11 @@
+name: Auto-assign new issues
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  assign:
+    uses: yancya/workflows/.github/workflows/auto-assign.yml@main
+    permissions:
+      issues: write
